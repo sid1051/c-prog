@@ -37,18 +37,8 @@ mt19937_64 rng(chrono::system_clock::now().time_since_epoch().count());
 
 ll n,k;
 
-ll check(ll m, ll i, vll &l){
-    if(i==n && l[i]<m) return 1e15;
-    if(l[i]>=m) return 0;
-    return (m-l[i]+check(m-1, i+1, l));
-}
-
 bool fun(ll m, ll k, vll &l){
     ll fg=0;
-    for(int i=n;i>=1;i--)
-    {
-        if(check(m, i, l)<=k) return 1;
-    }
     return 0;
 }
 
